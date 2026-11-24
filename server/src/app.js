@@ -1,4 +1,4 @@
-// The Express app, shared by the local server (index.js) and the Vercel function (api/index.mjs).
+// The Express app, shared by the local server (index.js) and the Vercel "server" service (see vercel.json).
 import 'dotenv/config'
 import express from 'express'
 import cookieParser from 'cookie-parser'
@@ -35,7 +35,7 @@ const production = process.env.NODE_ENV === 'production'
 if (production || process.env.VERCEL) app.set('trust proxy', 1)
 app.use(express.json({ limit: '100kb' }))
 app.use(cookieParser())
-// On Vercel each function instance connects on its first request.
+// On Vercel each server instance connects on its first request.
 app.use('/api', async (_req, _res, next) => {
   try {
     await connect()
