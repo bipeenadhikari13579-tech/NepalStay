@@ -1,0 +1,61 @@
+.confirm {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(20, 26, 51, 0.5);
+}
+
+.confirm__box {
+  width: min(100%, 420px);
+  padding: 24px;
+  border-radius: 20px;
+  background: #fff;
+  color: #141a33;
+  box-shadow: 0 24px 60px rgba(8, 10, 24, 0.35);
+}
+
+.confirm__box p {
+  margin: 0 0 20px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.confirm__actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.confirm__actions button {
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.confirm__back {
+  background: #eef1fd;
+  color: #141a33;
+}
+
+.confirm__back:hover {
+  background: #dfe5f8;
+}
+
+.confirm__ok {
+  background: #141a33;
+  color: #fff;
+}
+
+.confirm__ok.is-danger {
+  background: #c91f37;
+}
+
+.confirm__ok:hover {
+  filter: brightness(1.1);
+}

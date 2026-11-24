@@ -1,0 +1,27 @@
+# Render blueprint: one web service that runs the API and serves the website.
+# Secrets marked "sync: false" are typed into the Render dashboard, never stored here.
+services:
+  - type: web
+    name: nepalstay
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: 22.18.0
+      - key: JWT_SECRET
+        generateValue: true
+      - key: MONGO_URI
+        sync: false
+      - key: SMTP_USER
+        sync: false
+      - key: SMTP_PASS
+        sync: false
+      - key: ADMIN_OTP_EMAIL
+        sync: false
+      - key: GOOGLE_CLIENT_ID
+        sync: false

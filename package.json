@@ -1,0 +1,20 @@
+{
+  "name": "nepalstay",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Nepal Stay: website (client) and API server (server).",
+  "scripts": {
+    "dev": "concurrently --names \"server,client\" --prefix-colors \"magenta,cyan\" --kill-others-on-fail \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "build": "npm --prefix server install --omit=dev && npm --prefix client install --include=dev && npm --prefix client run build",
+    "start": "npm --prefix server start",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "create-admin": "npm --prefix server run create-admin --",
+    "copy-data": "npm --prefix server run copy-data --"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.7"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

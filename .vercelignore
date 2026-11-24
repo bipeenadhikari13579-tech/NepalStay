@@ -1,0 +1,8 @@
+# Never upload secrets, local data or installed packages.
+**/.env
+**/node_modules
+server/uploads
+client/dist
+.claude
+.vscode
+*.log
